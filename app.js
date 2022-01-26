@@ -1,13 +1,13 @@
-var express = require("express");
-var cors = require("cors");
-var cookieParser = require("cookie-parser");
-var logger = require("morgan");
-var path = require("path");
-var bodyParser = require("body-parser");
+const express = require("express");
+const cors = require("cors");
+const cookieParser = require("cookie-parser");
+const logger = require("morgan");
+const path = require("path");
+const bodyParser = require("body-parser");
 require("dotenv").config({ path: __dirname + "/.env" });
 
-var app = express();
-var port = process.env.PORT || 4000;
+const app = express();
+const PORT = process.env.PORT || 3000;
 
 app.use(logger("dev"));
 app.use(cors());
@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, "./")));
 
 app.locals.moment = require("moment");
 
-var mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
 mongoose
   .connect(
@@ -47,8 +47,8 @@ const excelRouter = require("./routers/excel.routers");
 
 app.use("/", excelRouter);
 
-app.listen(port, () => {
-  console.log("Listening on port: " + port);
+app.listen(PORT, () => {
+  console.log(`Our app is running on port ${PORT}`);
 });
 
 module.exports = app;
