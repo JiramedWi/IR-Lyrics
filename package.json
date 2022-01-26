@@ -17,7 +17,8 @@
     "express": "^4.17.2",
     "moment": "^2.29.1",
     "mongoose": "^6.1.8",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "serve": "^13.0.2"
   },
   "engines": {
     "node": "14.x"
