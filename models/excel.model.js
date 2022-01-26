@@ -3,7 +3,9 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const excelSchema = new Schema({
-  artistName: { type: String, require: true },
+  order: { type: Number, require: true },
+  sname: { type: String, require: true },
+  artist: { type: String, require: true },
   lyrics: { type: String, require: true },
 });
 

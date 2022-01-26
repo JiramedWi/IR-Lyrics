@@ -3,7 +3,8 @@ const router = express.Router();
 
 const ExcelController = require("../controllers/excel.controller");
 
-router.post("/insert", ExcelController.insert);
+// uncomment to use insert excel function
+// router.post("/insert", ExcelController.insert);
 
 router.get("/getExcel", ExcelController.getExcel);
 
