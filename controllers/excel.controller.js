@@ -21,3 +21,7 @@ exports.getExcel = (req, res) => {
     }
   });
 };
+
+exports.hello = (req, res) => {
+  res.json("hello world");
+};
