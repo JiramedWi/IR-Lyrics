@@ -36,13 +36,18 @@ const Excel = require("../models/excel.model");
 // };
 
 exports.getExcel = (req, res) => {
+  limit = 30000;
+  skip = limit * req.body.start;
+
   Excel.find({}, (err, result) => {
     if (err) {
       res.send(err);
     } else {
       res.json(result);
     }
-  });
+  })
+    .skip(skip)
+    .limit(limit);
 };
 
 exports.hello = (req, res) => {
