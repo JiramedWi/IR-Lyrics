@@ -36,7 +36,7 @@ const Excel = require("../models/excel.model");
 // };
 
 exports.getExcel = (req, res) => {
-  limit = 30000;
+  limit = 20000;
   skip = limit * req.body.start;
 
   Excel.find({}, (err, result) => {
