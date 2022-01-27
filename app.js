@@ -44,8 +44,10 @@ app.use(function (err, req, res, next) {
 
 //router
 const excelRouter = require("./routers/excel.routers");
+const authRouter = require("./routers/auth.routers");
 
 app.use("/", excelRouter);
+app.use("/login", authRouter);
 
 app.listen(PORT, () => {
   console.log(`Our app is running on port ${PORT}`);
